@@ -1,31 +1,19 @@
 import { useState } from 'react';
-import { Hello_backend } from 'declarations/Hello_backend';
-
+import{Navbar, Container} from "react-bootstrap"
+import TALION from "./images/TALION.jpg"
 function App() {
-  const [greeting, setGreeting] = useState('');
+ return(
+  <>
+  <Navbar>
+    <Container>
+<Navbar.Brand>
+  <img src={TALION} alt="Ta" />
+</Navbar.Brand>
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    const name = event.target.elements.name.value;
-    Hello_backend.greet(name).then((greeting) => {
-      setGreeting(greeting);
-    });
-    return false;
-  }
-
-  return (
-    <main>
-      <img src="/logo2.svg" alt="DFINITY logo" />
-      <br />
-      <br />
-      <form action="#" onSubmit={handleSubmit}>
-        <label htmlFor="name">Enter your name: &nbsp;</label>
-        <input id="name" alt="Name" type="text" />
-        <button type="submit">Click Me!</button>
-      </form>
-      <section id="greeting">{greeting}</section>
-    </main>
-  );
+    </Container>
+  </Navbar>
+  </>
+ )
 }
 
 export default App;
